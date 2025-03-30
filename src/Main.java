@@ -2,16 +2,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 abstract class Animal {
-    String name;
+    private String name;
 
     public Animal(String name) {
         this.name = name;
     }
 
-    abstract String makeSound();
+    public String getName() {
+        return name;
+    }
+
+    public abstract String makeSound();
 
     public void displaySound() {
-        System.out.println(name + " makes sound: " + makeSound());
+        System.out.println(getName() + " makes sound: " + makeSound());
     }
 }
 
@@ -21,7 +25,7 @@ class Dog extends Animal {
     }
 
     @Override
-    String makeSound() {
+    public String makeSound() {
         return "Bark";
     }
 }
@@ -32,7 +36,7 @@ class Cat extends Animal {
     }
 
     @Override
-    String makeSound() {
+    public String makeSound() {
         return "Meow";
     }
 }
@@ -43,15 +47,14 @@ class Cow extends Animal {
     }
 
     @Override
-    String makeSound() {
+    public String makeSound() {
         return "Moo";
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-
-        List<Animal> animals = new ArrayList<>();
+        List<Animal> animals = new ArrayList<>(); // Explicit generic type usage
         animals.add(new Dog());
         animals.add(new Cat());
         animals.add(new Cow());
