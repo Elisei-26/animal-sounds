@@ -1,56 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
-
-abstract class Animal {
-    private String name;
-
-    public Animal(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public abstract String makeSound();
-
-    public void displaySound() {
-        System.out.println(getName() + " makes sound: " + makeSound());
-    }
-}
-
-class Dog extends Animal {
-    public Dog() {
-        super("Dog");
-    }
-
-    @Override
-    public String makeSound() {
-        return "Bark";
-    }
-}
-
-class Cat extends Animal {
-    public Cat() {
-        super("Cat");
-    }
-
-    @Override
-    public String makeSound() {
-        return "Meow";
-    }
-}
-
-class Cow extends Animal {
-    public Cow() {
-        super("Cow");
-    }
-
-    @Override
-    public String makeSound() {
-        return "Moo";
-    }
-}
+import com.animalSounds.src.Animal;
+import com.animalSounds.src.Cat;
+import com.animalSounds.src.Cow;
+import com.animalSounds.src.Dog;
 
 public class Main {
     public static void main(String[] args) {
